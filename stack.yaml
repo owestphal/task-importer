@@ -1,0 +1,9 @@
+resolver: ghc-9.2.7
+
+packages:
+- .
+
+extra-deps:
+- zip-archive-0.4.3
+- digest-0.0.1.7
+- zlib-0.6.3.0
