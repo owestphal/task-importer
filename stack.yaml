@@ -1,9 +1,25 @@
-resolver: ghc-9.2.7
+resolver: lts-20.26
 
 packages:
 - .
+
+allow-newer: true
+allow-newer-deps:
+  - latex-svg-image
 
 extra-deps:
 - zip-archive-0.4.3
 - digest-0.0.1.7
 - zlib-0.6.3.0
+- latex-svg-image-0.2
+- git: https://github.com/owestphal/type-match
+  commit: 744797d33f85daa1d78181e2c512052903352dcc
+- git: https://github.com/fmidue/logic-tasks
+  commit: 2b86bfaf7abfb5b447a1e72722c2b79c615de0c2
+  subdirs:
+    - .
+    - examples
+- git: https://github.com/fmidue/output-monad
+  commit: 1cfddc487ebe6333de77f5adf9e6f06c15c8f79e
+  subdirs:
+    - output-monad
