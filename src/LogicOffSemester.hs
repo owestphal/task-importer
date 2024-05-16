@@ -7,6 +7,7 @@ import TaskSet
 
 import Control.Monad ((>=>))
 
+import LogicTasks.Config (FillConfig(..),PickConfig(..),DecideConfig(..),StepConfig(..),ResolutionConfig(..))
 import  Tasks.TreeToFormula.Config
 
 import Syntax.InvalidFormulas.Config
@@ -14,7 +15,6 @@ import Syntax.RemoveBrackets.Config
 import Syntax.TreeToFormula.Config
 import Semantics.TruthTables.FillGaps.Config
 import Syntax.InvalidCnfs.Config
-import LogicTasks.Config
 import Semantics.TruthTables.ChooseForFormula.Config
 import Semantics.TruthTables.FindMistakes.Config
 import Semantics.Resolution.Step.Config
@@ -59,8 +59,8 @@ exerciseTasks = from "20.05.2024 12:00" >=> to "07.08.2024 23:55" $ taskSet
   , mandatoryTask "Task12 B" task12 0.25
   , mandatoryTask "Task13 B" task13 0.25
   , mandatoryTask "Task14 B" task14 0.25
-  , mandatoryTask "Task15 B" task15 0.5
-  , mandatoryTask "Task16 B" task16 0.5
+  , mandatoryTask "Task15 B" task15{printFeedbackImmediately=False} 0.5
+  , mandatoryTask "Task16 B" task16{printFeedbackImmediately=False} 0.5
   , mandatoryTask "Task17 B" Subformulas.medium 0.34
   , mandatoryTask "Task18 B" Compose.medium 0.34
   , mandatoryTask "Task19 B" Decompose.medium 0.34

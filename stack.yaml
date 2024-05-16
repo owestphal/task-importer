@@ -15,7 +15,7 @@ extra-deps:
 - git: https://github.com/owestphal/type-match
   commit: 744797d33f85daa1d78181e2c512052903352dcc
 - git: https://github.com/fmidue/logic-tasks
-  commit: 2b86bfaf7abfb5b447a1e72722c2b79c615de0c2
+  commit: 3cabfba52e73ccfb850e77fcac0d65d93de17189
   subdirs:
     - .
     - examples
