@@ -1,0 +1,25 @@
+Syntax
+  LogicInvalidCnfs-Quiz -> LegalCNFConfig
+  LogicInvalidFormulas-Quiz -> LegalPropositionConfig
+  LogicRemoveBrackets-Quiz -> SuperfluousBracketsConfig
+  LogicSubformulas-Quiz -> SubTreeConfig
+  LogicTreeToFormula-Quiz -> SynTreeConfig
+Semantik
+  Wahrheitstabellen
+    TruthTableFillGaps-Direct -> FillInst
+    TruthTableFillGaps-Quiz -> FillConfig
+    TruthTableChooseForFormula-Direct -> PickInst
+    TruthTableChooseForFormula-Quiz -> PickConfig
+    TruthTableFindMistakes-Direct -> DecideInst
+    TruthTableFindMistakes-Quiz -> DecideConfig
+    TruthTableMaxterm-Direct -> MaxInst
+    TruthTableMaxterm-Quiz -> MinMaxConfig
+    TruthTableMinTerm-Direct -> MinInst
+    TruthTableMinTerm-Quiz -> MinMaxConfig
+  Resolution
+    LogicResolutionStep-Direct -> StepInst
+    LogicResolutionStep-Quiz -> StepConfig
+    LogicResolutionComplete-Direct -> ResolutionInst
+    LogicResolutionComplete-Quiz -> ResolutionConfig
+    PrologResolutionStep-Direct -> PrologInst
+    PrologResolutionStep-Quiz -> PrologConfig

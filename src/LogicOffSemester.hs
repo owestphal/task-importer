@@ -2,7 +2,6 @@
 {-# OPTIONS_GHC -Wno-orphans #-}
 module LogicOffSemester where
 
-import Task
 import TaskSet
 
 import Control.Monad ((>=>))

@@ -118,12 +118,8 @@ aufgabenTypString (Logik DecomposeFormulaQuiz) = "LogicDecomposeFormula-Quiz"
 data Restrictions = NoRestrictions |  Restrictions (Map SyntaxType Verbosity)
 
 printRestricitons :: Restrictions -> String
-printRestricitons = \case
-  NoRestrictions -> printWithMap Map.empty
-  (Restrictions x) -> printWithMap x
-  where
-    printWithMap :: Map SyntaxType Verbosity -> String
-    printWithMap m = "Restrictions { max_submissions = fromList [], answers = " ++ show m ++ ", discount = fromList []}"
+printRestricitons NoRestrictions = "Nothing"
+printRestricitons (Restrictions x) = "Just Restriction{max_submissions = fromList [], answers = " ++ show x ++ ", discount = fromList []}"
 
 data SyntaxType = GoodSyntax | BadSyntax
   deriving (Eq,Ord, Show)

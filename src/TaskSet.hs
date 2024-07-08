@@ -18,7 +18,7 @@ import Tasks.DecomposeFormula.Config (DecomposeFormulaConfig)
 import Control.Monad (forM, forM_)
 import qualified Data.ByteString.Lazy as BS
 import Codec.Archive.Zip
-import System.Directory (removeFile)
+import System.Directory (removeFile, createDirectoryIfMissing)
 import System.FilePath ((</>), (<.>))
 
 newtype TaskSet = TaskSet [Task]
@@ -79,14 +79,15 @@ taskTypeOf (TaskConfig cfg) = matchTypeOf cfg
 countPoints :: TaskSet -> Double
 countPoints (TaskSet ts) = sum $ map weight ts
 
-createTaskFiles :: TaskSet -> FilePath -> IO ()
-createTaskFiles (TaskSet xs) path = do
+createTaskFiles :: TaskSet -> FilePath -> FilePath -> IO ()
+createTaskFiles (TaskSet xs) path aname = do
+  createDirectoryIfMissing True path
   newFiles <- forM (xs`zip`[1..]) $ \(t,i) -> do
     let fname = path </> padString 3 '0' (show i) <.> "text"
     writeFile fname $ printTask t
     pure fname
   archive <- addFilesToArchive [] emptyArchive newFiles
-  BS.writeFile (path </> "tasks.zip") $ fromArchive archive
+  BS.writeFile (aname <.> "zip") $ fromArchive archive
   forM_ newFiles removeFile
 
 padString :: Int -> Char -> String -> String
