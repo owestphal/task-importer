@@ -47,7 +47,7 @@ library:
   source-dirs: src
 
 executables:
-  task-importer-exe:
+  task-importer:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
